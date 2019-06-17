@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Kalanjiyam Org.</title>
+	<link rel="icon" href="img/kalanjiyam-logo.png" type="image/gif" >  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<link rel="manifest" href="manifest.webmanifest"/>
+	<style> 
+	@font-face {
+      font-family: klge;
+      src: url(Gugi-Regular.ttf) format('truetype');
+    }
+	@font-face {
+      font-family: klgt;
+      src: url(TAM6.TTF) format('truetype');
+    }	
+	html {
+	  height: 100vh;
+	  background-image: url("img/triangle_pattern.png");	
+	  overflow:hidden;
+	  text-align:center;
+	}
+
+	body {
+	  height: inherit;
+	  margin: 0;
+	}
+	#a{
+	  height:30vh;
+	  width:100vw;	  
+	}
+	
+	#a p{
+		margin:0;
+	}
+	
+	#a p:nth-child(1){
+	    margin-top:50px;
+		font-family:klgt;
+		font-size:50px;		
+	}
+	#cnt, #a p:nth-child(2){
+		font-family:klge; 
+		font-size:25px;
+	}
+	
+	#cnt{		
+		text-align: left;
+		transition: visibility 0s, opacity 0.5s linear;
+	}
+	.hide{
+	    visibility: hidden;
+		opacity: 0;
+	}
+	.appear {
+	  visibility: visible;
+	  opacity: 1;
+	}
+	
+	.st2:hover,.st3:hover,.st4:hover,.st5:hover {
+		-webkit-filter: drop-shadow(12px 12px 7px rgba(0,0,0,0.5));      
+		filter: drop-shadow(12px 12px 7px rgba(0,0,0,0.5)); 	
+	}
+	
+	#svg{			
+		transition: width .25s, height .25s, transform .25s ease-out 0.25s;
+	}	
+	
+	#a #a1:hover{ 
+		-webkit-filter: drop-shadow(12px 12px 7px rgba(0,0,0,0.5));      
+		filter: drop-shadow(12px 12px 7px rgba(0,0,0,0.5));  
+		//filter: invert(50%);
+	}	
+	#a1 img {
+		height: 100%;
+		object-fit: cover;
+	  }
+	 
+	#ex1 a {
+		color: #fff;
+		font-weight: 700;
+		transition-duration: .2s;
+		text-decoration: none;
+		border-bottom: 2px solid transparent;
+			border-bottom-color: transparent;
+	}
+	
+	a.btn {
+		color: #fff;
+		background: #FF0066;
+		padding: .5rem 1rem;
+		display: inline-block;
+		border-radius: 4px;
+		transition-duration: .25s;
+		border: none;
+		font-size: 14px;
+    }
+	
+	.card {
+	  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);	 
+	  margin: auto;
+	  text-align: center;
+	  font-family: arial;
+	}
+
+	.title {
+	  color: grey;
+	}
+
+	#add {
+	  border: none;
+	  outline: 0;
+	  display: inline-block;
+	  padding-top: 8px;		
+	  padding-bottom: 8px;	
+	  color: white;
+	  background-color: #000;
+	  text-align: center;
+	  cursor: pointer;
+	  width: 100%;
+	}
+
+	a {
+	  text-decoration: none;
+	  color: black;
+	}
+
+	#add:hover, a:hover {
+	  opacity: 0.7;
+	}
+	ul {
+	  list-style: none;	 	  
+	}
+	li:before {
+	  content: "\f013"; /* FontAwesome Unicode */
+	  font-family: FontAwesome;
+	  display: inline-block;
+	  margin-left: -1.3em; /* same as padding-left set on li */
+	  width: 1.3em; /* same as padding-left set on li */
+	}
+
+/* #### Desktops #### */
+@media only screen and (min-width: 1024px) {
+
+	#a p:nth-child(1){
+	    margin-top:50px;
+		font-family:klgt;
+		font-size:50px;		
+	}
+	#a p:nth-child(2){
+		font-family:klge; 
+		font-size:25px;
+	}
+	
+	#a #a1{	   
+	   position:absolute;
+	   width:50px;
+       height:50px;
+	   right:50px;
+	   top:50px;
+	   border-radius:50%;
+	}
+	#a1 img{width:100%; height:100%;}
+
+	#list{margin-left:20vw;}
+	
+	#b{
+	  height:70vh;
+	  width:100vw;
+	}
+	#svg {
+	  display: block;	  
+	  //margin-left:calc(50vw - 200px);
+	  //margin-top:calc(20vh - 200px);
+	  position:absolute;	  	
+	  top:30%;
+	}
+	.logo{
+	  height: 400px;
+	  width:400px;
+	  right:calc(50% - 200px);
+	  }
+	.rotate45{
+		width: 200px;
+        height: 200px;
+		right:calc(25% - 100px);
+		top:calc(30% + 50px);
+		transform: rotate(-45deg);
+	}
+	.rotate135{
+	    width: 200px;
+        height: 200px;
+		right:calc(25% - 100px);
+		top:calc(30% + 50px);
+		transform: rotate(-135deg);
+	}
+	.rotate45p{	  
+        right:calc(25% - 100px);
+		top:calc(30% + 50px);
+	    width: 200px;
+        height: 200px;		
+		transform: rotate(45deg);
+	}
+	.rotate135p{
+	    right:calc(25% - 100px);
+	    width: 200px;
+        height: 200px;
+		top:calc(30% + 50px);
+		transform: rotate(135deg);
+	}
+	
+	#ex1{
+	  max-width: 300px;
+	} 
+	.card {	 
+	  max-width: 300px;
+	  margin: auto;	  
+	}
+	.title {
+	  font-size: 18px;
+	}
+
+	#add {
+	  font-size: 18px;
+	}
+
+	a {
+	  font-size: 22px;
+	}
+	
+}
+
+/* #### Mobile Phones Portrait #### */
+@media screen and (max-device-width: 480px) and (orientation: portrait){
+    #a p:nth-child(1){
+	    margin-top:75px;
+		font-family:klgt;
+		font-size:75px;		
+	}
+	#a p:nth-child(2){
+		font-family:klge; 
+		font-size:35px;
+	}
+	#list{ margin-top:15vh; margin-left:50px; font-size: 35px;}
+	
+	#a #a1{	   
+	   position:absolute;
+	   width:10vw;       
+	   right:40px;
+	   top:75px;
+	   border-radius:50%;
+	}
+	
+	 #a1 img{ width:10vw; }
+	 
+	 #ex1{
+	  max-width: 80vw;
+	  max-height: 80vh;
+	} 
+	.card {	 
+	  max-width: 80vw;
+	  margin: auto;	  
+	}
+    .title {
+	  font-size: 36px;
+	}
+
+	#add {
+	  font-size: 36px;
+	}
+
+	a {
+	  font-size: 40px;
+	}
+	h3{font-size: 45px;}
+	#ex1 p{
+	 font-size: 40px;
+	}
+	
+	#svg {
+	  display: block;	  	 
+      //margin-left:10vw;	  
+	  //margin-top:calc(10vh - 40vw);
+	  position:absolute;	 	  
+	  }
+	  
+	 .logo{
+	   //height: 400px;
+	   width:60vw;
+	   right:calc(20vw);
+	   top:35%;
+	  }
+	  
+	.rotate45{
+		width:40vw;
+		top:20%;
+		right:calc(30vw);		
+		transform: rotate(-135deg);
+	}
+	.rotate135{
+	    width:40vw;
+		top:20%;
+		right:calc(30vw);		
+		transform: rotate(135deg);
+	}
+	.rotate45p{	  		
+	    width:40vw;
+		top:20%;
+		right:calc(30vw);	
+		transform: rotate(-45deg);
+	}
+	.rotate135p{
+	    width:40vw;
+		top:20%;
+		right:calc(30vw);		
+		transform: rotate(45deg);
+	}
+}
+
+/* #### Mobile Phones Landscape #### */
+@media screen and (max-device-width: 640px) and (orientation: landscape){
+   /* some CSS here */
+}
+
+/* #### Mobile Phones Portrait or Landscape #### */
+@media screen and (max-device-width: 640px){
+
+}
+
+/* #### iPhone 4+ Portrait or Landscape #### */
+@media screen and (min-device-width: 320px) and (-webkit-min-device-pixel-ratio: 2){
+  /* some CSS here */
+}
+
+/* #### iPhone 5 Portrait or Landscape #### */
+@media (device-height: 568px) and (device-width: 320px) and (-webkit-min-device-pixel-ratio: 2){
+  /* some CSS here */
+}
+
+/* #### iPhone 6 and 6 plus Portrait or Landscape #### */
+@media (min-device-height: 667px) and (min-device-width: 375px) and (-webkit-min-device-pixel-ratio: 3){
+  /* some CSS here */
+}
+
+/* #### Tablets Portrait or Landscape #### */
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px){
+  #a p:nth-child(1){
+	    margin-top:40px;
+		font-family:klgt;
+		font-size:40px;		
+	}
+	#a p:nth-child(2){
+		font-family:klge; 
+		font-size:20px;
+	}
+	
+	#a #a1{	   
+	   position:absolute;
+	   width:50px;
+       height:50px;
+	   right:50px;
+	   top:50px;
+	   border-radius:50%;
+	}
+	#a1 img{width:100%; height:100%;}
+
+	#list{ margin-top:-20px; font-size : 18px; margin-left:20vw;}
+	
+	#b{
+	  height:70vh;
+	  width:100vw;
+	}
+	#svg {
+	  display: block;	  
+	  //margin-left:calc(50vw - 200px);
+	  //margin-top:calc(20vh - 200px);
+	  position:absolute;	  	
+	  top:30%;
+	}
+	.logo{
+	  height: 250px;
+	  width:250px;
+	  right:calc(50% - 125px);
+	  }
+	.rotate45{
+		width: 200px;
+        height: 200px;
+		right:calc(25% - 100px);
+		top:calc(30% + 50px);
+		transform: rotate(-45deg);
+	}
+	.rotate135{
+	    width: 200px;
+        height: 200px;
+		right:calc(25% - 100px);
+		top:calc(30% + 50px);
+		transform: rotate(-135deg);
+	}
+	.rotate45p{	  
+        right:calc(25% - 100px);
+		top:calc(30% + 50px);
+	    width: 200px;
+        height: 200px;		
+		transform: rotate(45deg);
+	}
+	.rotate135p{
+	    right:calc(25% - 100px);
+	    width: 200px;
+        height: 200px;
+		top:calc(30% + 50px);
+		transform: rotate(135deg);
+	}
+	
+	#ex1{
+	  max-width: 300px;
+	} 
+	.card {	 
+	  max-width: 300px;
+	  margin: auto;	  
+	}
+	.title {
+	  font-size: 18px;
+	}
+
+	#add {
+	  font-size: 18px;
+	}
+
+	a {
+	  font-size: 22px;
+	}
+}
+
+	.st0{fill:none;}
+	.st1{fill:url(#SVGID_1_);}
+	.st2{fill:url(#SVGID_2_);}
+	.st3{fill:url(#SVGID_3_);}
+	.st4{fill:url(#SVGID_4_);}
+	.st5{fill:url(#SVGID_5_);}				
+	</style>
+    
+    
+  </head>
+  <body>
+   <div id="a">
+   <p>è÷…Cò‹</p>
+   <p>Technical Services</p>   
+   <div id="a1"><a href="#ex1" rel="modal:open"><img src="img/user.png" alt="Contact"></a></div>
+   </div>   
+    <div id="b">
+	<svg class="logo" id="svg"
+	   xmlns:dc="http://purl.org/dc/elements/1.1/"
+	   xmlns:cc="http://creativecommons.org/ns#"
+	   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	   xmlns:svg="http://www.w3.org/2000/svg"
+	   xmlns="http://www.w3.org/2000/svg"
+	   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+	   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+	   version="1.1"
+	   id="Layer_1"
+	   x="0px"
+	   y="0px"
+	   viewBox="0 0 1080 1080"
+	   style="enable-background:new 0 0 1080 1080;"
+	   xml:space="preserve"
+	   sodipodi:docname="kalanjiyam-logo.svg"
+	   inkscape:version="0.92.3 (2405546, 2018-03-11)"><metadata
+	   id="metadata130"><rdf:RDF><cc:Work
+		   rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+			 rdf:resource="http://purl.org/dc/dcmitype/StillImage" /></cc:Work></rdf:RDF></metadata><defs
+	   id="defs128" /><sodipodi:namedview
+	   pagecolor="#ffffff"
+	   bordercolor="#666666"
+	   borderopacity="1"
+	   objecttolerance="10"
+	   gridtolerance="10"
+	   guidetolerance="10"
+	   inkscape:pageopacity="0"
+	   inkscape:pageshadow="2"
+	   inkscape:window-width="1366"
+	   inkscape:window-height="715"
+	   id="namedview126"
+	   showgrid="false"
+	   inkscape:snap-nodes="true"
+	   inkscape:snap-intersection-paths="true"
+	   inkscape:snap-page="true"
+	   inkscape:zoom="0.21851852"
+	   inkscape:cx="195.35357"
+	   inkscape:cy="540"
+	   inkscape:window-x="-8"
+	   inkscape:window-y="-8"
+	   inkscape:window-maximized="1"
+	   inkscape:current-layer="Layer_1" />
+	
+	<ellipse
+	   transform="matrix(0.4867 -0.8736 0.8736 0.4867 -196.0204 748.3707)"
+	   class="st0"
+	   cx="538.8"
+	   cy="541"
+	   rx="127.8"
+	   ry="127.8"
+	   id="ellipse4" />
+	<radialGradient
+	   id="SVGID_1_"
+	   cx="239.3015"
+	   cy="118.3115"
+	   r="111.5457"
+	   gradientTransform="matrix(-0.8736 -0.4867 0.4867 -0.8736 690.4373 761.8146)"
+	   gradientUnits="userSpaceOnUse">
+		<stop
+	   offset="0"
+	   style="stop-color:#000000"
+	   id="stop6" />
+		<stop
+	   offset="8.556104e-02"
+	   style="stop-color:#080808"
+	   id="stop8" />
+		<stop
+	   offset="0.219"
+	   style="stop-color:#1E1E1E"
+	   id="stop10" />
+		<stop
+	   offset="0.3836"
+	   style="stop-color:#424242"
+	   id="stop12" />
+		<stop
+	   offset="0.5731"
+	   style="stop-color:#757575"
+	   id="stop14" />
+		<stop
+	   offset="0.7836"
+	   style="stop-color:#B5B5B5"
+	   id="stop16" />
+		<stop
+	   offset="1"
+	   style="stop-color:#FFFFFF"
+	   id="stop18" />
+	</radialGradient>
+	<circle
+	   class="st1"
+	   cx="539"
+	   cy="542"
+	   r="111.5"
+	   id="circle21" />
+	<linearGradient
+	   id="SVGID_2_"
+	   gradientUnits="userSpaceOnUse"
+	   x1="-898.1703"
+	   y1="544.1971"
+	   x2="-181.7841"
+	   y2="544.1971"
+	   gradientTransform="matrix(-0.5645 0.8254 -0.8254 -0.5645 933.7997 1065.436)">
+		<stop
+	   offset="0"
+	   style="stop-color:#FF1D25"
+	   id="stop23" />
+		<stop
+	   offset="0.3726"
+	   style="stop-color:#FD1D25;stop-opacity:0.9255"
+	   id="stop25" />
+		<stop
+	   offset="0.5069"
+	   style="stop-color:#F61C24;stop-opacity:0.8986"
+	   id="stop27" />
+		<stop
+	   offset="0.6026"
+	   style="stop-color:#EB1B22;stop-opacity:0.8795"
+	   id="stop29" />
+		<stop
+	   offset="0.68"
+	   style="stop-color:#DA1920;stop-opacity:0.864"
+	   id="stop31" />
+		<stop
+	   offset="0.7463"
+	   style="stop-color:#C4161C;stop-opacity:0.8507"
+	   id="stop33" />
+		<stop
+	   offset="0.805"
+	   style="stop-color:#A81318;stop-opacity:0.839"
+	   id="stop35" />
+		<stop
+	   offset="0.8581"
+	   style="stop-color:#880F14;stop-opacity:0.8284"
+	   id="stop37" />
+		<stop
+	   offset="0.9069"
+	   style="stop-color:#620B0E;stop-opacity:0.8186"
+	   id="stop39" />
+		<stop
+	   offset="0.9523"
+	   style="stop-color:#370608;stop-opacity:0.8095"
+	   id="stop41" />
+		<stop
+	   offset="0.9926"
+	   style="stop-color:#090101;stop-opacity:0.8015"
+	   id="stop43" />
+		<stop
+	   offset="1"
+	   style="stop-color:#000000;stop-opacity:0.8"
+	   id="stop45" />
+	</linearGradient>
+	<path
+	   class="st2"
+	   d="M637,369.3c-8.1,128.5,52.6,172.5-23.9,256.6c171.2-95.2,208.1-110.3,273.4-294.4  C919.9,219,971,120.8,1034,45.9l-0.1-0.1c-4.8,2.3-9.5,4.7-14.1,7.2c-52.2,27.4-98,61.2-134.4,101.4c47.3-96.1-71.9,20.2-72.2,45.9  c34.8-112.8-55,15.9-55.2,36.1c17.7-93-42.3,16-42.5,36.2c13.4-86.4-42.4,19-42.6,42.9C673.6,237.5,638.7,340.9,637,369.3z"
+	   id="path48" />
+	<linearGradient
+	   id="SVGID_3_"
+	   gradientUnits="userSpaceOnUse"
+	   x1="-197.9344"
+	   y1="879.9052"
+	   x2="518.4519"
+	   y2="879.9052"
+	   gradientTransform="matrix(0.8254 0.5645 -0.5645 0.8254 676.1632 -521.768)">
+		<stop
+	   offset="0"
+	   style="stop-color:#7AC943"
+	   id="stop50" />
+		<stop
+	   offset="0.3953"
+	   style="stop-color:#79C742;stop-opacity:0.9209"
+	   id="stop52" />
+		<stop
+	   offset="0.5377"
+	   style="stop-color:#76C040;stop-opacity:0.8925"
+	   id="stop54" />
+		<stop
+	   offset="0.6393"
+	   style="stop-color:#71B53C;stop-opacity:0.8721"
+	   id="stop56" />
+		<stop
+	   offset="0.7214"
+	   style="stop-color:#6AA436;stop-opacity:0.8557"
+	   id="stop58" />
+		<stop
+	   offset="0.7917"
+	   style="stop-color:#618E2E;stop-opacity:0.8417"
+	   id="stop60" />
+		<stop
+	   offset="0.854"
+	   style="stop-color:#567224;stop-opacity:0.8292"
+	   id="stop62" />
+		<stop
+	   offset="0.9104"
+	   style="stop-color:#485219;stop-opacity:0.8179"
+	   id="stop64" />
+		<stop
+	   offset="0.9604"
+	   style="stop-color:#392E0C;stop-opacity:0.8079"
+	   id="stop66" />
+		<stop
+	   offset="1"
+	   style="stop-color:#2A0B00;stop-opacity:0.8"
+	   id="stop68" />
+	</linearGradient>
+	<path
+	   class="st3"
+	   d="M368.5,447.4c128.5,8.1,172.5-52.6,256.6,23.9C530,300.1,514.8,263.2,330.7,197.9  C218.2,164.5,120,113.4,45.1,50.4L45,50.6c2.3,4.8,4.7,9.5,7.2,14.1c27.4,52.2,61.2,98,101.4,134.4c-96.1-47.3,20.2,71.9,45.9,72.2  c-112.8-34.8,15.9,55,36.1,55.2c-93-17.7,16,42.3,36.2,42.5c-86.4-13.4,19,42.4,42.9,42.6C236.7,410.8,340.1,445.7,368.5,447.4z"
+	   id="path71" />
+	<linearGradient
+	   id="SVGID_4_"
+	   gradientUnits="userSpaceOnUse"
+	   x1="-341.691"
+	   y1="854.0059"
+	   x2="374.6953"
+	   y2="854.0059"
+	   gradientTransform="matrix(0.5645 -0.8254 0.8254 0.5645 -423.2109 298.4714)">
+		<stop
+	   offset="0"
+	   style="stop-color:#3FA9F5"
+	   id="stop73" />
+		<stop
+	   offset="0.3756"
+	   style="stop-color:#3FA8F3;stop-opacity:0.9249"
+	   id="stop75" />
+		<stop
+	   offset="0.511"
+	   style="stop-color:#3DA3EC;stop-opacity:0.8978"
+	   id="stop77" />
+		<stop
+	   offset="0.6074"
+	   style="stop-color:#3A9BE1;stop-opacity:0.8785"
+	   id="stop79" />
+		<stop
+	   offset="0.6855"
+	   style="stop-color:#358FD0;stop-opacity:0.8629"
+	   id="stop81" />
+		<stop
+	   offset="0.7523"
+	   style="stop-color:#3080BA;stop-opacity:0.8495"
+	   id="stop83" />
+		<stop
+	   offset="0.8115"
+	   style="stop-color:#296D9E;stop-opacity:0.8377"
+	   id="stop85" />
+		<stop
+	   offset="0.8651"
+	   style="stop-color:#20577E;stop-opacity:0.827"
+	   id="stop87" />
+		<stop
+	   offset="0.9143"
+	   style="stop-color:#173D58;stop-opacity:0.8171"
+	   id="stop89" />
+		<stop
+	   offset="0.9581"
+	   style="stop-color:#0C202F;stop-opacity:0.8084"
+	   id="stop91" />
+		<stop
+	   offset="0.9989"
+	   style="stop-color:#000101;stop-opacity:0.8002"
+	   id="stop93" />
+		<stop
+	   offset="1"
+	   style="stop-color:#000000;stop-opacity:0.8"
+	   id="stop95" />
+	</linearGradient>
+	<path
+	   class="st4"
+	   d="M443.5,710.1c8.1-128.5-52.6-172.5,23.9-256.6C296.1,548.7,259.2,563.8,193.9,748  c-33.4,112.5-84.5,210.7-147.5,285.6l0.1,0.1c4.8-2.3,9.5-4.7,14.1-7.2c52.2-27.4,98-61.2,134.4-101.4  c-47.3,96.1,71.9-20.2,72.2-45.9c-34.8,112.8,55-15.9,55.2-36.1c-17.7,93,42.3-16,42.5-36.2c-13.4,86.4,42.4-19,42.6-42.9  C406.9,841.9,441.7,738.6,443.5,710.1z"
+	   id="path98" />
+	<linearGradient
+	   id="SVGID_5_"
+	   gradientUnits="userSpaceOnUse"
+	   x1="-1037.5493"
+	   y1="1036.6294"
+	   x2="-321.1631"
+	   y2="1036.6294"
+	   gradientTransform="matrix(-0.8254 -0.5645 0.5645 -0.8254 -382.9779 1259.8306)">
+		<stop
+	   offset="0"
+	   style="stop-color:#ffcc00;stop-opacity:1"
+	   id="stop100" />
+		<stop
+	   offset="0.3788"
+	   style="stop-color:#E9D621;stop-opacity:0.9242"
+	   id="stop102" />
+		<stop
+	   offset="0.5153"
+	   style="stop-color:#E2D020;stop-opacity:0.8969"
+	   id="stop104" />
+		<stop
+	   offset="0.6125"
+	   style="stop-color:#D7C51E;stop-opacity:0.8775"
+	   id="stop106" />
+		<stop
+	   offset="0.6912"
+	   style="stop-color:#C6B61C;stop-opacity:0.8618"
+	   id="stop108" />
+		<stop
+	   offset="0.7586"
+	   style="stop-color:#B0A119;stop-opacity:0.8483"
+	   id="stop110" />
+		<stop
+	   offset="0.8183"
+	   style="stop-color:#948815;stop-opacity:0.8363"
+	   id="stop112" />
+		<stop
+	   offset="0.8723"
+	   style="stop-color:#746B10;stop-opacity:0.8255"
+	   id="stop114" />
+		<stop
+	   offset="0.922"
+	   style="stop-color:#4E480B;stop-opacity:0.8156"
+	   id="stop116" />
+		<stop
+	   offset="0.9661"
+	   style="stop-color:#252205;stop-opacity:0.8068"
+	   id="stop118" />
+		<stop
+	   offset="1"
+	   style="stop-color:#000000;stop-opacity:1"
+	   id="stop120" />
+	</linearGradient>
+	<path
+	   class="st5"
+	   d="M706.2,635.2c-128.5-8.1-172.5,52.6-256.6-23.9C544.7,782.6,559.9,819.5,744,884.7  c112.5,33.4,210.7,84.5,285.6,147.5l0.1-0.1c-2.3-4.8-4.7-9.5-7.2-14.1c-27.4-52.2-61.2-98-101.4-134.4  c96.1,47.3-20.2-71.9-45.9-72.2c112.8,34.8-15.9-55-36.1-55.2c93,17.7-16-42.3-36.2-42.5c86.4,13.4-19-42.4-42.9-42.6  C838,671.8,734.6,637,706.2,635.2z"
+	   id="path123" />
+	</svg>
+	
+	<div id="cnt" class="hide">
+	 <ul id="list" >
+	   <li>Networking and PC Maintanance
+		</br></br>
+	  </li>
+	  <li>Web App Development
+		</br></br>
+	  </li>
+	   <li>Mobile App Development
+		</br></br>
+	  </li>	 
+	  <li>Technical Assistance For Business
+		</br></br>
+	  </li>	
+	  <li>Aptitude and Technical Training
+		</br></br>
+	  </li>
+	</ul>
+	</div>
+	
+	</div>
+    <button hidden class="add-button">Add to home screen</button>
+  </body>
+  
+  <!-- Modal HTML embedded directly into document -->
+<div id="ex1" class="modal">
+<div class="card">
+  <img src="img/kalanjiyam-logo.png" alt="Kalanjiyam" style="width:100%">
+  <h3>Kalanjiyam Tech Sol.</h3>
+  <p class="title">Krishnapuram Colony, Madurai.</p>
+  <p>kalanjiyam.rkv@gmail.com</p>
+  <p>+91-94867 89907</p>
+  <!--  <div style="margin: 24px 0;">
+    <a href="#"><i class="fa fa-dribbble"></i></a> 
+    <a href="#"><i class="fa fa-twitter"></i></a>  
+    <a href="#"><i class="fa fa-linkedin"></i></a>  
+    <a href="#"><i class="fa fa-facebook"></i></a> 
+  </div>-->
+  <p><a id="add" href="kalanjiyam.vcf" >Add to Contact</a></p>  
+</div>
+ 
+  <!-- <a class="btn" href="#" rel="modal:close">Close</a> -->
+</div>
+
+</html>
+
+
+<script defer>
+	// Register service worker to control making site work offline
+
+	if('serviceWorker' in navigator) {
+	  navigator.serviceWorker
+			   .register('sw.js')
+			   .then(function() { console.log('Service Worker Registered'); });
+	}
+
+	// Code to handle install prompt on desktop
+
+	let deferredPrompt;
+	//const addBtn = document.querySelector('.add-button');
+	//addBtn.style.display = 'none';
+
+	window.addEventListener('beforeinstallprompt', (e) => {
+	  // Prevent Chrome 67 and earlier from automatically showing the prompt
+	  e.preventDefault();
+	  // Stash the event so it can be triggered later.
+	  deferredPrompt = e;
+	  // Update UI to notify the user they can add to home screen
+	  //addBtn.style.display = 'block';
+
+	  deferredPrompt.prompt();
+		// Wait for the user to respond to the prompt
+		deferredPrompt.userChoice.then((choiceResult) => {
+			if (choiceResult.outcome === 'accepted') {
+			  console.log('User accepted the prompt');
+			} else {
+			  console.log('User dismissed the prompt');
+			}
+			deferredPrompt = null;
+		  });
+		  
+	  /*addBtn.addEventListener('click', (e) => {
+		// hide our user interface that shows our A2HS button
+		//addBtn.style.display = 'none';
+		// Show the prompt
+		
+	  });*/
+	});
+
+$(document).ready(function(){
+	  $(".st2").click(function(){
+		//$("#svg").css({"transform": "rotate(45deg)"});
+		 $("#svg").removeClass('logo rotate45 rotate135 rotate45p rotate135p');
+		 $("#cnt").removeClass('hide');
+		 $("#svg").toggleClass('rotate135');		
+		 $("#cnt").toggleClass('appear');
+	  });
+	  $(".st3").click(function(){
+		//$("#svg").css({"transform": "rotate(45deg)"});
+		 $("#svg").removeClass('logo rotate45 rotate135 rotate45p rotate135p');
+		 $("#cnt").removeClass('hide');
+		 $("#svg").toggleClass('rotate45');
+		 $("#cnt").toggleClass('appear');
+	  });
+	  $(".st4").click(function(){
+		//$("#svg").css({"transform": "rotate(45deg)"});
+		 $("#svg").removeClass('logo rotate45 rotate135 rotate45p rotate135p');
+		 $("#cnt").removeClass('hide');
+		 $("#svg").toggleClass('rotate45p');
+		 $("#cnt").toggleClass('appear');
+	  });
+	  $(".st5").click(function(){
+		//$("#svg").css({"transform": "rotate(45deg)"});
+		 $("#svg").removeClass('logo rotate45 rotate135 rotate45p rotate135p');
+		 $("#cnt").removeClass('hide');
+		 $("#svg").toggleClass('rotate135p');
+		 $("#cnt").toggleClass('appear');
+	  });
+	  $(".st1").click(function(){
+		//$("#svg").css({"transform": "rotate(45deg)"});
+		 $("#svg").removeClass('rotate45 rotate135 rotate45p rotate135p');		
+		 $("#cnt").removeClass('appear');
+		 $("#svg").addClass('logo');			 
+		 $("#cnt").addClass('hide');	
+	  });
+	});
+</script>
