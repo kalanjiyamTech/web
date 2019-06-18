@@ -2,16 +2,16 @@ self.addEventListener('install', function(e) {
  e.waitUntil(
    caches.open('video-store').then(function(cache) {
      return cache.addAll([
-       '/kalanjiyam/',
-       '/kalanjiyam/index.html',
-       '/kalanjiyam/Gugi-Regular.ttf',
-       '/kalanjiyam/TAM6.TTF',
-       '/kalanjiyam/kalanjiyam.vcf',
-       '/kalanjiyam/img/icon.png',
-       '/kalanjiyam/img/kalanjiyam-logo.png',
-       '/kalanjiyam/img/triangle_pattern.png',
-       '/kalanjiyam/img/kalanjiyam-logo.svg',
-       '/kalanjiyam/img/user.png'
+       '/web/',
+       '/web/index.html',
+       '/web/Gugi-Regular.ttf',
+       '/web/TAM6.TTF',
+       '/web/kalanjiyam.vcf',
+       '/web/img/icon.png',
+       '/web/img/kalanjiyam-logo.png',
+       '/web/img/triangle_pattern.png',
+       '/web/img/kalanjiyam-logo.svg',
+       '/web/img/user.png'
      ]);
    })
  );
