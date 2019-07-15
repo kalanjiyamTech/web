@@ -145,7 +145,13 @@
 
 /* #### Desktops #### */
 @media only screen and (min-width: 1024px) {
-
+	#whatsapp{
+		height: 48px;
+		position: fixed; 
+		z-index: 99999999;
+		bottom: 10px;
+		left: 10px;
+	}
 	#a p:nth-child(1){
 	    margin-top:50px;
 		font-family:klgt;
@@ -236,6 +242,13 @@
 
 /* #### Mobile Phones Portrait #### */
 @media screen and (max-device-width: 480px) and (orientation: portrait){
+	#whatsapp{
+		height: 10vw;
+		position: fixed; 
+		z-index: 99999999;
+		bottom: 20px;
+		left: 20px;
+	}
     #a p:nth-child(1){
 	    margin-top:75px;
 		font-family:klgt;
@@ -348,6 +361,13 @@
 
 /* #### Tablets Portrait or Landscape #### */
 @media screen and (min-device-width: 768px) and (max-device-width: 1024px){
+	#whatsapp{
+		height: 48px;
+		position: fixed; 
+		z-index: 99999999;
+		bottom: 20px;
+		left: 20px;
+	}
   #a p:nth-child(1){
 	    margin-top:40px;
 		font-family:klgt;
@@ -823,7 +843,7 @@
  
   <!-- <a class="btn" href="#" rel="modal:close">Close</a> -->
 </div>
-<a href="https://api.whatsapp.com/send?phone=917904003831&amp;text=" whatsapp="" us"="" target="_blank" class="whatsapp">  <img src="https://www.pantechsolutions.net/blog/wp-content/plugins/click-to-chat-for-whatsapp/assets/img/whatsapp-icon-square.svg" alt="whatsapp" style="height: 48px;position: fixed; z-index: 99999999;bottom: 10px;left: 10px;"></a>
+<a id='whatsapp' href="https://api.whatsapp.com/send?phone=917904003831&amp;text=" whatsapp="" us"="" target="_blank" class="whatsapp">  <img src="img/whatsapp-icon-square.svg" alt="whatsapp" style=""></a>
 </html>
 
 
