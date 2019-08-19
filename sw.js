@@ -11,7 +11,8 @@ self.addEventListener('install', function(e) {
        '/web/img/kalanjiyam-logo.png',
        '/web/img/triangle_pattern.png',
        '/web/img/kalanjiyam-logo.svg',
-       '/web/img/user.png'
+       '/web/img/user.png',
+	   '/web/img/whatsapp-icon-square.svg'
      ]);
    })
  );
